@@ -1,0 +1,25 @@
+type User {
+  username: String,
+  email: String,
+  phone_number: String,
+  access_token: String,
+  avatar: String
+}
+
+input UserInput {
+  username: String,
+  email: String,
+  phone_number: String,
+  avatar: String,
+  access_token: String,
+  password: String
+}
+
+type Query {
+  userList: [User]
+}
+
+type Mutation {
+  createUser(data: UserInput): Boolean
+  loginUser(email: String!, password: String!): String
+}
